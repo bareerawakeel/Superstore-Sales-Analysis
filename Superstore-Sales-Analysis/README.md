@@ -28,7 +28,7 @@ The goal is to transform raw sales data into meaningful business insights that c
 - Excel
 -  ## 📊 Power BI Dashboard
 
-![Dashboard](./Dahboard.png)
+![Power BI Dashboard](./Dashboard.png)
 
 ## 📈 Key Findings
 
