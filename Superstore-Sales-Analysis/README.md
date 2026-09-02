@@ -26,6 +26,9 @@ The goal is to transform raw sales data into meaningful business insights that c
 - SQL
 - Power BI
 - Excel
+-  ## 📊 Power BI Dashboard
+
+![Superstore Sales Dashboard](Dahboard.png)
 
 ## 📈 Key Findings
 
