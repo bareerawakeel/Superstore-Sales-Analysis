@@ -25,7 +25,7 @@ The goal is to transform raw sales data into meaningful business insights that c
 - Matplotlib
 - SQL
 - Power BI
-- Excel
+
 -  ## 📊 Power BI Dashboard
 
 ![Power BI Dashboard](./Dashboard.png)
