@@ -1,8 +1,6 @@
 CREATE DATABASE
 superstore_analysis;
 USE superstore_analysis;
-
-
 CREATE TABLE superstore (
     row_id INT,
     order_id VARCHAR(50),
@@ -67,9 +65,6 @@ FROM superstore
 GROUP BY category
 ORDER BY total_sales DESC;
 
-
-
-
 SELECT
     region,
     ROUND(SUM(sales), 2) AS total_sales
@@ -92,7 +87,6 @@ FROM superstore
 GROUP BY region, category
 ORDER BY region, total_sales DESC;
 
-
 SELECT
     YEAR(order_date) AS year,
     ROUND(SUM(sales), 2) AS total_sales
@@ -100,16 +94,14 @@ FROM superstore
 GROUP BY YEAR(order_date)
 ORDER BY year;
 
-
- SELECT
+SELECT
     MONTH(order_date) AS month,
     ROUND(SUM(sales), 2) AS total_sales
 FROM superstore
 GROUP BY MONTH(order_date)
 ORDER BY month;
 
-
- SELECT
+SELECT
     YEAR(order_date) AS year,
     MONTH(order_date) AS month,
     ROUND(SUM(sales), 2) AS total_sales
@@ -117,15 +109,13 @@ FROM superstore
 GROUP BY YEAR(order_date), MONTH(order_date)
 ORDER BY year, month;
 
-
- SELECT
+SELECT
     product_name,
     ROUND(SUM(sales), 2) AS total_sales
 FROM superstore
 GROUP BY product_name
 ORDER BY total_sales DESC
 LIMIT 10;
-
 
 SELECT
     customer_name,
@@ -135,7 +125,6 @@ GROUP BY customer_name
 ORDER BY total_sales DESC
 LIMIT 10;
 
-
  SELECT
     state,
     ROUND(SUM(sales), 2) AS total_sales
@@ -143,7 +132,6 @@ FROM superstore
 GROUP BY state
 ORDER BY total_sales DESC
 LIMIT 10;
-
 
  SELECT
     city,
@@ -154,7 +142,6 @@ GROUP BY city, state
 ORDER BY total_sales DESC
 LIMIT 10;
 
-
  SELECT
     product_name,
     ROUND(SUM(sales), 2) AS total_sales,
@@ -164,8 +151,7 @@ LIMIT 10;
 FROM superstore
 GROUP BY product_name;
 
-
- SELECT
+SELECT
     category,
     product_name,
     ROUND(SUM(sales), 2) AS
@@ -177,7 +163,6 @@ GROUP BY product_name;
 FROM superstore
 Group By category,product_name
 ORDER BY category,category_rank;
-
 
 WITH customer_sales AS (
     SELECT
@@ -193,8 +178,6 @@ FROM customer_sales
 ORDER BY total_sales DESC
 LIMIT 10;
 
-
-
 SELECT
     customer_name,
     ROUND(SUM(sales), 2) AS total_sales,
@@ -207,9 +190,7 @@ FROM superstore
 GROUP BY customer_name
 ORDER BY total_sales DESC;
 
-
-
- WITH region_category AS (
+WITH region_category AS (
     SELECT
         region,
         category,
@@ -235,9 +216,6 @@ SELECT
 FROM ranked
 WHERE category_rank = 1;
 
-
-
-
 SELECT
     product_name,
     ROUND(SUM(sales), 2) AS total_sales
@@ -246,7 +224,6 @@ GROUP BY product_name
 ORDER BY total_sales DESC
 LIMIT 10;
 
-
 SELECT
     customer_name,
     ROUND(SUM(sales), 2) AS total_sales
@@ -254,8 +231,6 @@ FROM superstore
 GROUP BY customer_name
 ORDER BY total_sales DESC
 LIMIT 10;
-
-
 
 SELECT
     category,
@@ -266,7 +241,6 @@ SELECT
 FROM superstore
 GROUP BY category
 ORDER BY category_rank;
-
 
 WITH product_sales AS (
     SELECT
@@ -296,7 +270,6 @@ FROM ranked_products
 WHERE product_rank <= 3
 ORDER BY category, product_rank;
 
-
 WITH monthly_sales AS (
     SELECT
         YEAR(order_date) AS year,
@@ -311,7 +284,6 @@ SELECT
     ROUND(total_sales, 2) AS total_sales
 FROM monthly_sales
 ORDER BY year, month;
-
 
 WITH yearly_sales AS (
     SELECT
